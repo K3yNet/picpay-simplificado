@@ -10,5 +10,6 @@ import com.pagamentos.picpay_simplificado.models.AppUser;
 @Repository
 public interface AppUserRepository extends JpaRepository<AppUser, Long> {
     Optional<AppUser> findByIdentifier(String identifier);
+
     Optional<AppUser> findByEmail(String email);
 }

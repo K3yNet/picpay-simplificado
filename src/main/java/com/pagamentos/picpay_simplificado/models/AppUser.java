@@ -1,5 +1,7 @@
 package com.pagamentos.picpay_simplificado.models;
 
+import java.math.BigDecimal;
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -39,6 +41,6 @@ public class AppUser {
 
     @Column(nullable = false)
     @Builder.Default
-    private Double walletBalance = 0.0;
+    private BigDecimal walletBalance = BigDecimal.ZERO;
 
 }

@@ -71,12 +71,14 @@ public class AppUserService {
         AppUser appUser = appUserRepository.findByIdentifier(identifier)
                 .orElseThrow(() -> new UserNotFoundException(identifier));
 
-        appUserRepository.findByIdentifier(appUser.getIdentifier())
-                .ifPresentOrElse(
-                        id -> {
-                            throw new DuplicateIdentifierException(appUser.getIdentifier());
-                        },
-                        () -> appUser.setEmail(appUserDTORequest.getEmail()));
+        appUserRepository.findByEmail(appUserDTORequest.getEmail())
+                .ifPresent(id -> {
+                    if (appUserDTORequest.getEmail().equals(appUser.getEmail())) { // Verifica se o email é o mesmo
+                        appUser.setEmail(appUserDTORequest.getEmail());
+                    } else
+                        throw new DuplicateEmailException(appUserDTORequest.getEmail());
+                });
+        appUser.setEmail(appUserDTORequest.getEmail());
         appUser.setFullName(appUserDTORequest.getFullName());
         appUser.setPassword(appUserDTORequest.getPassword());
 
