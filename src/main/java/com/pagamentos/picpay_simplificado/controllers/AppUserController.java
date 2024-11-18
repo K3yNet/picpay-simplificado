@@ -33,10 +33,10 @@ public class AppUserController {
         return ResponseEntity.ok(appUserDTOResponse);
     }
 
-    @GetMapping("/")
+    @GetMapping()
     public ResponseEntity<List<AppUserDTOResponse>> getAllAppUsers() {
-        List<AppUserDTOResponse> appUserDTOResponse = appUserService.getAllAppUsers();
-        return ResponseEntity.ok(appUserDTOResponse);
+        List<AppUserDTOResponse> users = appUserService.getAllAppUsers();
+        return ResponseEntity.ok(users);
     }
 
     @PutMapping("/{identifier}")
