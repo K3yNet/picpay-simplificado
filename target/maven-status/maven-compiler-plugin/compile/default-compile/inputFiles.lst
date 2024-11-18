@@ -12,6 +12,7 @@
 /home/kenned/Documentos/GitHub/picpay-simplificado/src/main/java/com/pagamentos/picpay_simplificado/validations/CheckBalance.java
 /home/kenned/Documentos/GitHub/picpay-simplificado/src/main/java/com/pagamentos/picpay_simplificado/exceptions/UserNotFoundException.java
 /home/kenned/Documentos/GitHub/picpay-simplificado/src/main/java/com/pagamentos/picpay_simplificado/exceptions/InsufficientBalanceException.java
+/home/kenned/Documentos/GitHub/picpay-simplificado/src/main/java/com/pagamentos/picpay_simplificado/exceptions/MerchantCannotTransferException.java
 /home/kenned/Documentos/GitHub/picpay-simplificado/src/main/java/com/pagamentos/picpay_simplificado/repositories/AppUserRepository.java
 /home/kenned/Documentos/GitHub/picpay-simplificado/src/main/java/com/pagamentos/picpay_simplificado/exceptions/DuplicateIdentifierException.java
 /home/kenned/Documentos/GitHub/picpay-simplificado/src/main/java/com/pagamentos/picpay_simplificado/exceptions/InvalidIdentifierException.java

@@ -5,7 +5,7 @@ public final class IdentifierValidator {
         return identifier != null && identifier.length() == 11;
     }
 
-    public static boolean isCompanyUser(String identifier) {
+    public static boolean isMerchantUser(String identifier) {
         return identifier != null && identifier.length() == 14;
     }
 }

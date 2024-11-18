@@ -1,5 +1,8 @@
 package com.pagamentos.picpay_simplificado.services;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.stereotype.Service;
 
 import com.pagamentos.picpay_simplificado.exceptions.*;
@@ -21,8 +24,6 @@ public class AppUserService {
     private final AppUserRepository appUserRepository;
 
     public AppUserDTOResponse createAppUser(AppUserDTORequest appUserDTORequest) {
-        validateIdentifierLength(appUserDTORequest.getIdentifier());
-
         // Mapeia de AppUserDTORequest para AppUser e define o tipo de usuário
         AppUser appUser = defineAppUserType(AppUserMappers.toAppUser(appUserDTORequest));
 
@@ -45,18 +46,13 @@ public class AppUserService {
         return AppUserMappers.toAppUserDTOResponse(appUserRepository.save(appUser));
     }
 
-    private void validateIdentifierLength(String identifier) {
-        int length = identifier.length();
-        if (length != 11 && length != 14) {
-            throw new InvalidIdentifierException(identifier);
-        }
-    }
-
     private AppUser defineAppUserType(AppUser appUser) {
         if (IdentifierValidator.isCommonUser(appUser.getIdentifier())) {
             appUser.setType("CommonUser");
-        } else if (IdentifierValidator.isCompanyUser(appUser.getIdentifier())) {
+        } else if (IdentifierValidator.isMerchantUser(appUser.getIdentifier())) {
             appUser.setType("MerchantUser");
+        } else {
+            throw new InvalidIdentifierException(appUser.getIdentifier());
         }
         return appUser;
     }
@@ -65,6 +61,14 @@ public class AppUserService {
         AppUser appUser = appUserRepository.findByIdentifier(identifier)
                 .orElseThrow(() -> new UserNotFoundException(identifier));
         return AppUserMappers.toAppUserDTOResponse(appUser);
+    }
+
+    // Método para desenvolvimento não subir para produção
+    public List<AppUserDTOResponse> getAllAppUsers() {
+        List<AppUser> appUserList = appUserRepository.findAll();
+        return appUserList.stream()
+                .map(AppUserMappers::toAppUserDTOResponse) // Converte para DTO
+                .collect(Collectors.toList());
     }
 
     public AppUserDTOResponse updateAppUser(String identifier, AppUserDTORequest appUserDTORequest) {

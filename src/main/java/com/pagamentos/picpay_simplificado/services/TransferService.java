@@ -25,6 +25,7 @@ public class TransferService {
 
     @Transactional(rollbackOn = Exception.class)
     public void transfer(String payerIdentifier, String peyeeIdentifier, BigDecimal amount) {
+        
         // Buscar usuários remetente e destinatário pelo identifier
         AppUser payer = appUserRepository.findByIdentifier(payerIdentifier)
                 .orElseThrow(() -> new UserNotFoundException(payerIdentifier));

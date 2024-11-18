@@ -1,5 +1,7 @@
 package com.pagamentos.picpay_simplificado.controllers;
 
+import java.util.List;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -28,6 +30,12 @@ public class AppUserController {
     @GetMapping("/{identifier}")
     public ResponseEntity<AppUserDTOResponse> getAppUser(@PathVariable String identifier) {
         AppUserDTOResponse appUserDTOResponse = appUserService.getAppUser(identifier);
+        return ResponseEntity.ok(appUserDTOResponse);
+    }
+
+    @GetMapping("/")
+    public ResponseEntity<List<AppUserDTOResponse>> getAllAppUsers() {
+        List<AppUserDTOResponse> appUserDTOResponse = appUserService.getAllAppUsers();
         return ResponseEntity.ok(appUserDTOResponse);
     }
 
