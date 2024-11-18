@@ -2,8 +2,6 @@ package com.pagamentos.picpay_simplificado.models;
 
 import java.math.BigDecimal;
 
-import org.hibernate.validator.constraints.UniqueElements;
-
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
