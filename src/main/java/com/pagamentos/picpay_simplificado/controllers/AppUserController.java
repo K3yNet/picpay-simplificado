@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import com.pagamentos.picpay_simplificado.models.AppUser;
 import com.pagamentos.picpay_simplificado.models.DTO.requests.AppUserDTORequest;
 import com.pagamentos.picpay_simplificado.models.DTO.responses.AppUserDTOResponse;
 import com.pagamentos.picpay_simplificado.services.AppUserService;
@@ -34,8 +35,8 @@ public class AppUserController {
     }
 
     @GetMapping()
-    public ResponseEntity<List<AppUserDTOResponse>> getAllAppUsers() {
-        List<AppUserDTOResponse> users = appUserService.getAllAppUsers();
+    public ResponseEntity<List<AppUser>> getAllAppUsers() {
+        List<AppUser> users = appUserService.getAllAppUsers();
         return ResponseEntity.ok(users);
     }
 

@@ -64,10 +64,9 @@ public class AppUserService {
     }
 
     // Método para desenvolvimento não subir para produção
-    public List<AppUserDTOResponse> getAllAppUsers() {
-        List<AppUser> appUserList = appUserRepository.findAll();
-        return appUserList.stream()
-                .map(AppUserMappers::toAppUserDTOResponse) // Converte para DTO
+    public List<AppUser> getAllAppUsers() {
+        List<AppUser> users = appUserRepository.findAll();
+        return users.stream()
                 .collect(Collectors.toList());
     }
 
