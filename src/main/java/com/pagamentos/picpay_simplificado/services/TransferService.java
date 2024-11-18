@@ -5,7 +5,6 @@ import java.math.BigDecimal;
 import org.springframework.stereotype.Service;
 
 import com.pagamentos.picpay_simplificado.client.AuthorizationClient;
-import com.pagamentos.picpay_simplificado.client.DTO.AuthorizationDTO;
 import com.pagamentos.picpay_simplificado.exceptions.*;
 import com.pagamentos.picpay_simplificado.models.AppUser;
 import com.pagamentos.picpay_simplificado.models.Transfer;
