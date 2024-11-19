@@ -5,14 +5,15 @@
 /home/kenned/Documentos/GitHub/picpay-simplificado/src/main/java/com/pagamentos/picpay_simplificado/services/TransferService.java
 /home/kenned/Documentos/GitHub/picpay-simplificado/src/main/java/com/pagamentos/picpay_simplificado/models/Transfer.java
 /home/kenned/Documentos/GitHub/picpay-simplificado/src/main/java/com/pagamentos/picpay_simplificado/validations/IdentifierValidator.java
+/home/kenned/Documentos/GitHub/picpay-simplificado/src/main/java/com/pagamentos/picpay_simplificado/client/NotificationClient.java
 /home/kenned/Documentos/GitHub/picpay-simplificado/src/main/java/com/pagamentos/picpay_simplificado/exceptions/AuthorizationFailedException.java
 /home/kenned/Documentos/GitHub/picpay-simplificado/src/main/java/com/pagamentos/picpay_simplificado/validations/CheckBalance.java
 /home/kenned/Documentos/GitHub/picpay-simplificado/src/main/java/com/pagamentos/picpay_simplificado/exceptions/UserNotFoundException.java
 /home/kenned/Documentos/GitHub/picpay-simplificado/src/main/java/com/pagamentos/picpay_simplificado/exceptions/InsufficientBalanceException.java
+/home/kenned/Documentos/GitHub/picpay-simplificado/src/main/java/com/pagamentos/picpay_simplificado/exceptions/NotificationFailedException.java
 /home/kenned/Documentos/GitHub/picpay-simplificado/src/main/java/com/pagamentos/picpay_simplificado/validations/CPFValidator.java
 /home/kenned/Documentos/GitHub/picpay-simplificado/src/main/java/com/pagamentos/picpay_simplificado/mappers/AppUserMappers.java
 /home/kenned/Documentos/GitHub/picpay-simplificado/src/main/java/com/pagamentos/picpay_simplificado/exceptions/DuplicateEmailException.java
-/home/kenned/Documentos/GitHub/picpay-simplificado/src/main/java/com/pagamentos/picpay_simplificado/client/DTO/DataDTO.java
 /home/kenned/Documentos/GitHub/picpay-simplificado/src/main/java/com/pagamentos/picpay_simplificado/controllers/TransferController.java
 /home/kenned/Documentos/GitHub/picpay-simplificado/src/main/java/com/pagamentos/picpay_simplificado/models/AppUser.java
 /home/kenned/Documentos/GitHub/picpay-simplificado/src/main/java/com/pagamentos/picpay_simplificado/exceptions/GlobalExceptionHandler.java
